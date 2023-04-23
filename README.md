@@ -15,8 +15,8 @@ Original publication: xxx.xxx
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Just download files and run with python
+* If MTCR sample not work in Linux, change the random method as in comments
 
 ### Executing program
 
@@ -26,12 +26,6 @@ Original publication: xxx.xxx
 code blocks for commands
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
