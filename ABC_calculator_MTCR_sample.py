@@ -124,6 +124,9 @@ class RandomEngine(qmc.QMCEngine):
     def __init__(self, d, seed=None):
         super().__init__(d=d, seed=seed)
 
+    # change to following if random not work
+    # def _random(self, n=1, *, workers=1):
+    #     return self.rng.random((n, self.d))
     def random(self, n=1):
         self.num_generated += n
         return self.rng.random((n, self.d))
