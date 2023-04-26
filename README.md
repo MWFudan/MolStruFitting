@@ -12,22 +12,17 @@ Original publication: xxx.xxx
 ### Dependencies
 
 * Python 3 with numpy, scipy, tqdm package.
-* Tested in Win11 and Ubuntu
+* Tested in Win11 and Ubuntu20
 
 ### Installing
 
 * Just download files and run with python
-* If MTCR sample not work in Linux, change the random method as in comments
+* If MTCR sample not work in Linux, change the `random` method as in comments
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
 
-
+Change parameters in `__name__ == '__main__'` block and run it. The parameters are explained in comments
 ## Authors
 
 Contributors names and contact info
