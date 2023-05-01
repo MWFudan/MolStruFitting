@@ -379,21 +379,7 @@ O    -1.076167000000     -2.426866000000      0.879897000000
 H    -0.510893000000     -1.881278000000      0.319742000000
 H    -1.727930000000     -1.806813000000      1.228032000000
 '''
-    # x = calc_ABC(*text_converter(t))
-    # x = [round(q, 6) for q in x]
-    # print(', '.join(map(str, x)))
-    # print('\n'.join(map(str, x)))
-    # print(target_ABC - x, (target_ABC-x)/target_ABC * 100)
-    # print(target_ABC - x, ['%.3e' % q for q in (target_ABC-x)/target_ABC])
-    #
-    # opt_coor, unc = optimize_coor(t, target_ABC, ignore_error=False)
-    # print(opt_coor)
-    # print(unc)
-    # x = calc_ABC(*text_converter(opt_coor))
-    # print(target_ABC - x, (target_ABC - x) / target_ABC * 100)
-    #
-    # optimize_coor_Quasi_Monte_Carlo_sample(t, target_ABC, loop_num=576000, acceptable_error=10000, save_file_path=r"D:\MW\data\程序优化结构测试\水六聚体\opt_qmc.xyz")
-    # exit()
+    
     save_fp = r'D:\MW\data\程序优化结构测试\苯甲醛-水\MTCR\2w_mtcr.xyz'
     loop_num = 1000000
     with open(save_fp, 'w') as f:
