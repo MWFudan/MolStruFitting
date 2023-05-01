@@ -26,9 +26,9 @@ Change parameters in `__name__ == '__main__'` block and run it. The parameters a
 ## Authors
 
 
-Xinlei Chen, 20110220046@fudan.edu.cn
+* Xinlei Chen, 20110220046@fudan.edu.cn
 
-Weixin Li, weixingli@fudan.edu.cn
+* Weixin Li, weixingli@fudan.edu.cn
 
 
 ## Acknowledgments
