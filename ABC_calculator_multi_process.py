@@ -349,92 +349,14 @@ def convert_to_main_axis(mass, coor):
 
 
 if __name__ == '__main__':
-    # water hexamer:
-    # cage: 2161.8762, 1129.3153, 1066.9627; prism: 1658.224, 1362.000, 1313.124; book: 1879.4748, 1063.9814, 775.0619
-    # heptamer: PR1:1304.4355, 937.8844, 919.5236; PR2:1345.1594, 976.8789, 854.4739
-    # nonamer: D1:787.2274, 619.5586, 571.8116; S1: 774.7442, 633.5400, 570.6459; S2:776.7668, 626.8284, 563.3916; S3:761.7375,642.6831, 563.0343; D2:763.0778,643.8806, 564.1854
-    # octamer: PPD1: 576.5298,555.3607, 497.7572; PPS1: 567.8751,562.6901, 497.454; PPS2: 576.9403,563.5092, 480.954; PPS3: 577.7268,563.2242, 480.586
-    # target_ABC = np.array([2648.36020, 1131.68565, 1047.42194])
-    # target_ABC = np.array([1299.84034, 460.03769, 433.66443])
     target_ABC = np.array([1488.44069,828.38884,664.21572])
-#     t = '''O        -1.074218      -1.941212      -0.789132
-# H        -1.012845      -1.783302       0.177397
-# H        -0.988378      -2.896211      -0.900355
-#
-# O         1.066249      -0.295116      -1.792634
-# H         0.341818      -0.907633      -1.559982
-# H         0.691896       0.584803      -1.602655
-#
-# O        -2.475159       0.651108      -0.299381
-# H        -2.234737       0.226414       0.547956
-# H        -2.438795      -0.097031      -0.915923
-#
-# O        -0.206371       2.106083      -0.736908
-# H        -1.103965       1.703779      -0.630504
-# H        -0.356985       3.000666      -1.065603
-#
-# O         0.924739       0.860969       1.620240
-# H         1.728534       0.436758       1.246953
-# H         0.614203       1.442087       0.901271
-#
-# O         2.892463      -0.541065       0.248033
-# H         2.354801      -0.492972      -0.579200
-# H         3.797797      -0.344812      -0.020788
-#
-# O        -1.114754      -0.813046       1.746943
-# H        -0.314458      -0.212311       1.794334
-# H        -1.284380      -1.100181       2.652181
-# '''
-#     x = calc_ABC(*text_converter(t))
-#     x = [round(q, 6) for q in x]
-#     print(', '.join(map(str, x)))
-#     print('\n'.join(map(str, x)))
-#     print(target_ABC - x, (target_ABC-x)/target_ABC * 100)
-#     print(target_ABC - x, ['%.3e' % q for q in (target_ABC-x)/target_ABC])
-    #
-    # opt_coor, unc = optimize_coor(t, target_ABC, ignore_error=False)
-    # print(opt_coor)
-    # print(unc)
-    # x = calc_ABC(*text_converter(opt_coor))
-    # print(target_ABC - x, (target_ABC - x) / target_ABC * 100)
-    #
-    # optimize_coor_Quasi_Monte_Carlo_sample(t, target_ABC, loop_num=576000, acceptable_error=10000, save_file_path=r"D:\MW\data\程序优化结构测试\水六聚体\opt_qmc.xyz")
-    # exit()
-
-
 
     file_path = r"C:\Users\mike chen\Documents\WeChat Files\wxid_vom3jfqtyo9x22\FileStorage\File\2023-04\change_multistructures.xyz"
-    text = '''  C     -3.017483    0.498314    1.411246
-  C     -3.131057    0.433686    0.050862
-  S     -1.647857    0.817644   -0.722589
-  C     -0.858792    1.070554    0.780555
-  C     -1.708309    0.867754    1.829831
-  H     -3.835621    0.294147    2.087194
-  H     -3.999714    0.177316   -0.533293
-  H      0.185291    1.332607    0.807764
-  H     -1.410341    0.968505    2.863497
-  
-  C      1.646544    0.009297   -1.895725
-  C      2.402502    0.778351   -1.059597
-  S      2.807378   -0.069745    0.379211
-  C      1.960323   -1.471741   -0.137457
-  C      1.394937   -1.287399   -1.366568
-  H      1.285541    0.350799   -2.854834
-  H      2.743313    1.789628   -1.211506
-  H      1.926374   -2.347328    0.490444
-  H      0.823010   -2.048198   -1.878480
-  
-  O     -1.076167   -2.426866    0.879897
-  H     -0.510893   -1.881278    0.319742
-  H     -1.727930   -1.806813    1.228032'''
-    # result = optimize_coor(text, target_ABC)
-    # print(result)
-    # print('new error:', target_ABC-calc_ABC(*text_converter(result)))
-    # exit()
+
     iso_abc = [
         (18, '18O', 1242.416, 458.95570, 426.62361),
     ]
-    sep_idx = [3, 6, 9, 12, 15, 18]
+    sep_idx = [3, 6, 9, 12, 15, 18]  # separation index, ex. water dimer is 3
     optimize_coor_file_list(file_path, sep_idx, target_ABC)
     # result, msg, __ = optimize_coor(text, target_ABC, 0, isotope_target_ABC=iso_abc)
     # print(result,'\n', msg)
@@ -442,8 +364,8 @@ if __name__ == '__main__':
     # print('parent error:', np.array(iso_abc[0][2:]) - calc_ABC(*text_converter(result.replace('O','18O'))))
     exit()
 
-    di = r'D:\MW\data\SO2_H2O\coor\opt_try'
-    parm = {
+    # di = r'D:\MW\data\SO2_H2O\coor\opt_try'
+    '''parm = {
         '1s2w': ([3, 6],                (2089.5204, 1459.8550, 1194.6845)),
         '1s3w': ([3, 6,9],              (2089.5204, 1459.8550, 1194.6845)),
         '1s4w': ([3, 6,9,12],           (2089.5204, 1459.8550, 1194.6845)),
@@ -468,4 +390,4 @@ if __name__ == '__main__':
         print(ffn)
         optimize_coor_file_list(ffn, v[0], np.array(v[1]))
         sum_result.clear()
-
+    '''
