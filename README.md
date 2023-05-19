@@ -11,7 +11,7 @@ Original publication: xxx.xxx
 
 ### Dependencies
 
-* Python 3 with numpy, scipy, tqdm package.
+* Python 3 with numpy, scipy, tqdm package
 * Tested in Win11 and Ubuntu20
 
 ### Installing
@@ -23,6 +23,16 @@ Original publication: xxx.xxx
 
 
 Change parameters in `__name__ == '__main__'` block and run it. The parameters are explained in comments
+
+The output file contains all possible candidates, which can be ranked using XTB method (doi: 10.1021/acs.jctc.7b00118). To rank these candidates using GFN1-xtb method, install xtb-python, download scripts in XTB_sort directory and run
+
+```
+python xtb_sort.py XXX
+```
+
+When finish, a file containing ranked candidates is available. 
+
+Note: xtb sort method is only accessible in Linux.
 ## Authors
 
 
