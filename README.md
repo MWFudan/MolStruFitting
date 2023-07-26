@@ -4,7 +4,7 @@ Rotational constant based fitting program
 ## Description
 
 Program used to fit structure to have similar rotational constant with the given value. It is designed to generate possible conformers of cluster and accelerate structure determination workflow. 
-Original publication: xxx.xxx
+Original publication: doi:10.1063/1674-0068/cjcp2304042
 ![image](https://github.com/MWFudan/MolStruFitting/blob/main/img/%E5%9B%BE%E7%89%872.png)
 
 ## Getting Started
